@@ -1,4 +1,4 @@
-package com.project.publicproject.di.module
+package com.project.publicproject.di
 
 import com.project.publicproject.retrofit.RetrofitService
 import dagger.Module
@@ -9,10 +9,10 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import javax.inject.Singleton
 
-@Module
-class RetrofitModule {
-    @Provides
+@Module(includes = [ViewModelModule::class])
+class AppModule {
     @Singleton
+    @Provides
     fun provideRetrofitService(
         okHttpClient: OkHttpClient,
         factory: Converter.Factory
