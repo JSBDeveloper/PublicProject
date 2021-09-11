@@ -20,8 +20,6 @@ interface AppComponent : AndroidInjector<BaseApplication> {
         @BindsInstance
         fun application(application: Application): Builder
         fun build(): AppComponent
-
-
     }
 
     override fun inject(instance: BaseApplication?) {
